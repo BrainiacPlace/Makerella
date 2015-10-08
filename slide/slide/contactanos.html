@@ -1,0 +1,153 @@
+<?php
+
+$to = 'pedido@bymakerella.com';
+$subject = $_POST['subject'];
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+
+$body = "Mensaje: $message";
+
+$header = "From: $email";
+
+if($_POST){
+if($name == '' || $email == '' || $message == ''){
+	$feedback = 'Fill out all the fields';
+}else{
+}
+	mail($to, $subject, $body, $header);
+	$feedback = 'Thanks For Message';
+}
+
+
+?>
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">  
+
+    <title>Contáctanos | Makerella</title> <!--insert your title here-->  
+    <meta name="description" content="Sweet Cake HTML5 CSS3 version"> <!--insert your description here-->  
+    <meta name="author" content="nicDark"> <!--insert your name here-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--meta responsive-->
+  	<!--START CSS--> 
+    <link rel="stylesheet" href="css/style.css"> <!--main-->
+    <link rel="stylesheet" href="css/grid.css"> <!--grid-->
+    <link rel="stylesheet" href="css/responsive.css"> <!--grid-->
+    <link rel="stylesheet" href="css/isotope.css" /> <!--isotope-->
+    <link rel="stylesheet" type="text/css" href="slide/css/fullwidth.css" media="screen" /> <!--revolution slider-->
+	<link rel="stylesheet" type="text/css" href="slide/rs-plugin/css/settings.css" media="screen" /> <!--revolution slider-->
+    <link rel="stylesheet" href="css/prettyPhoto.css" media="screen" /> <!--prettyphoto-->
+    <!--END CSS-->
+    <!--[if lt IE 9]>  
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>  
+    <![endif]-->  
+    <!--FAVICONS-->
+    <link rel="shortcut icon" href="img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+    <!--END FAVICONS-->
+</head>  
+
+<body><!--start navigationmenu-->
+
+<header id="navigationmenu">
+    <!--start container-->
+    <div class="container clearfix"> 
+        <!--left navigation-->
+        <div class="grid_5 timo">
+            <nav class="leftnavigation">
+                <ul>
+                    <li class="timo2"><a href="eventos.html">Eventos</a></li> <!--you can edit-->
+                    <li class="timo3"><a href="productos.html">Productos</a></li> <!--you can edit-->
+                    <li class="timo4"><a href="index.html">Makerella</a></li> <!--you can edit-->
+                </ul>    
+            </nav>
+        </div>
+        <!--end left navigation-->
+        <!--start logo-->
+        <div class="grid_2 logo">
+            <img alt="" src="img/logo.png" width="200" height="200"/> <!--Include your logo with size 180px X 239 px-->
+        </div>
+        <!--end logo-->
+        <!--right navigation-->
+        <div class="grid_5">
+            <nav class="rightnavigation">
+                <ul>    
+                    <li><a href="servicios.html">Servicios</a></li> <!--you can edit-->
+                    <li><a href="clases.html">Clases</a></li> <!--you can edit-->
+                    <li><a href="contactanos.php">Contáctanos</a></li> <!--you can edit-->
+                </ul>    
+            </nav>
+        </div>
+        <!--end right navigation-->
+    </div>
+    <!--end container-->    
+</header>
+<div class="container clearfix">
+   	<div class="grid_5">
+		<img src="img/section-contact/contact.jpg"/>
+    </div>
+    <div class="grid_7 contact">
+        <form id="ContactForm" action="?" method="post">
+            <div>
+                <p id="feedback"> <?php echo $feedback; ?></p>
+                <div  class="wrapper">
+                    <span for="name" class="nameLabel">Nombre:</span>
+                    <div class="bg">
+                        <input id="name" type="text" class="input" name="name" placeholder="Escribe tu nombre...">
+                    </div>
+                </div>
+                <div  class="wrapper">
+                    <span for="email" class="nameLabel">Correo:</span>
+                    <div class="bg">
+                         <input id="email" class="input" type="text" name="email" placeholder="Escribe tu correo electronico...">
+                    </div>
+                </div>   
+                <div  class="wrapper">
+                    <span for="subject">Asunto:</span>
+                    <div class="bg">
+                        <input id="subject" class="input" type="text" name="subject" placeholder="Asunto del mensaje...">
+                    </div>
+                </div>
+                <div  class="textarea_box">
+                    <span for="message" class="messageLabel">Mensaje:</span>
+                    <textarea id="message" name="message" placeholder="Escribe tu mensaje..."></textarea>
+                </div>
+                </br>
+                <button class="button1" type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>         
+<div class="topwaves"></div>  
+<!--Start js-->    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!--Jquery-->
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script> <!-- Google Map API -->
+    <script src="js/jquery.isotope.min.js"></script> <!--isotope-->
+    <script src="slide/rs-plugin/js/jquery.themepunch.plugins.min.js"></script> <!--revolution slider-->
+    <script src="slide/rs-plugin/js/jquery.themepunch.revolution.min.js"></script> <!--revolution slider-->
+    <script src="js/jquery.prettyPhoto.js"></script> <!--pretty photo-->
+    <script src="js/settings.js"></script> <!--My settings-->
+<!--End js-->
+<!--google analytics-->
+    <script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-36678297-1']);
+	  _gaq.push(['_setDomainName', 'newgraphicses.it']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+<!--google analytics-->
+</body>  
+</html>
